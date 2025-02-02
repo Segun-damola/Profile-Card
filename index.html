@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile Card</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f4f4f4;
+        }
+        .card {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            width: 300px;
+        }
+        .profile-img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+        .social-links a {
+            margin: 0 10px;
+            text-decoration: none;
+            color: #0073b1;
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <img src="profile.jpg" alt="Profile Picture" class="profile-img" data-testid="profilePicture">
+        <h2 data-testid="fullName">Adeniyi Oluwasegun Adedamola</h2>
+        <h4 data-testid="jobTitle">Frontend Developer</h4>
+        <p data-testid="shortBio">Passionate frontend developer with a love for creating interactive and user-friendly web applications.</p>
+        <p data-testid="currentLocation">Lagos, Nigeria</p>
+        <p data-testid="emailAddress">adeniyioluwasegun63@gmail.com</p>
+        <div class="social-links" data-testid="socialLinks">
+            <div class="social-links" data-testid="socialLinks">
+                <a href="https://Twitter.com/in/Segun.damola" target="_blank">Twitter</a>
+                <a href="https://github.com/Segun-damola" target="_blank">GitHub</a>
+        </div>
+        <p data-testid="currentTimeUTC" id="utc-time">Loading time...</p>
+    </div>
+
+    <script>
+        function updateTime() {
+            const now = new Date();
+            document.getElementById("utc-time").innerText = now.toUTCString();
+        }
+        updateTime();
+        setInterval(updateTime, 1000);
+    </script>
+</body>
+</html>
